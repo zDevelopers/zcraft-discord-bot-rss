@@ -104,6 +104,13 @@ def post_item_to_discord(item, catch_phrase, webhook_url):
                 "title": item["title"],
                 "description": truncate(strip_tags(item["description"])),
                 "url": item["link"],
+                "color": 0x3f9718,  # zcraft green
+                "thumbnail": {
+                  "url": "https://i.zcraft.fr/9823741573047757.png"
+                },
+                "footer": {
+                  "text": "Actualités de Zcraft" if not catch_phrase else "Forum de Zcraft"
+                },
                 "timestamp": item["pubDate"].isoformat(),
             }
         ],
